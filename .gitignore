@@ -1,11 +1,17 @@
-# Environment variables
+# Environment variables (real ones)
 .env
+srcs/.env
 
-# Secrets
+# Secrets (real ones) 
 secrets/
+srcs/secrets/
 
 # Data directories
 data/
+C:/ahmsanli/
+
+# Docker volumes
+ahmsanli/
 
 # Docker
 .dockerignore
