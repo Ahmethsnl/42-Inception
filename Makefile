@@ -12,6 +12,6 @@ re: clean all
 
 clean:
 	@$(DC) down -v --remove-orphans   
-	@docker rmi -f $$(docker images -q)
+	@powershell -Command "docker images -q | ForEach-Object { docker rmi -f $_ }"
 
 .PHONY: all down re clean

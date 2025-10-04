@@ -12,21 +12,24 @@ RUN apt-get update && apt-get install -y \
     apt-get update && apt-get install -y \
     bash \
     netcat \
-    php7.3 \
-    php7.3-cli \
-    php7.3-cgi \
-    php7.3-fpm \
-    php7.3-mysql \
-    php7.3-pdo \
-    php7.3-gd \
-    php7.3-mbstring \
+    php8.1 \
+    php8.1-cli \
+    php8.1-cgi \
+    php8.1-fpm \
+    php8.1-mysql \
+    php8.1-pdo \
+    php8.1-gd \
+    php8.1-mbstring \
+    php8.1-curl \
+    php8.1-xml \
+    php8.1-zip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
   && chmod +x wp-cli.phar \
   && mv wp-cli.phar /usr/local/bin/wp
 
-COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
+COPY ./conf/www.conf /etc/php/8.1/fpm/pool.d/
 
 RUN mkdir /run/php
 
@@ -38,4 +41,4 @@ WORKDIR /var/www/html/
 
 EXPOSE 9000
 
-CMD ["/usr/sbin/php-fpm7.3", "-F"]
+CMD ["/usr/sbin/php-fpm8.1", "-F"]
