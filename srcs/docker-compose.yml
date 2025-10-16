@@ -51,13 +51,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: C:\ahmsanli\data\mysql
+      device: /home/ahmsanli/data/mysql
       o: bind
   wordpress_data:
     driver: local
     driver_opts:
       type: none
-      device: C:\ahmsanli\data\wordpress
+      device: /home/ahmsanli/data/wordpress
       o: bind
       
 networks:
